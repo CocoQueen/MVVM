@@ -5,6 +5,9 @@ import android.view.View;
 
 import com.example.coco.mvvmdemo.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by coco on 2017/10/9.
  */
@@ -16,6 +19,22 @@ public class MainViewModel {
         this.amb = amb;
         setGoods();
         setPrice();
+        setList();
+        setMap();
+    }
+    public void setMap(){
+        HashMap<String,String>map = new HashMap<>();
+        map.put("name","vivox20");
+        map.put("price","2999");
+        map.put("desc","全面屏");
+        amb.setMap(map);
+    }
+    public void setList(){
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            strings.add("aaa"+i);
+        }
+        amb.setList(strings);
     }
     public void setGoods(){
         amb.setGoods(new Goods("vivox20",88.88f,"hahaha"));
